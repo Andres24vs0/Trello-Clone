@@ -27,6 +27,7 @@
 		<url/>
 	</scm>
 	<properties>
+		<sonar.organization>novam8</sonar.organization>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>

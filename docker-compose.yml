@@ -1,0 +1,17 @@
+
+services:
+  kanban-app:
+    build:
+      context: ./estoNoEsTrello
+      dockerfile: Dockerfile
+    container_name: nova_kanban_app
+    ports:
+      - "8080:8080"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'     # Restricción: Máximo medio núcleo de CPU
+          memory: 512M     # Restricción: Máximo 512 MB de RAM
+        reservations:
+          cpus: '0.25'     # Reserva mínima de CPU
+          memory: 256M     # Reserva mínima de RAM
