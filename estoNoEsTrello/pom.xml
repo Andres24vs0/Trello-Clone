@@ -57,27 +57,7 @@
 			<artifactId>gson</artifactId>
 			<version>2.13.1</version>
 		</dependency>
-
-		<!-- Pruebas de Aceptación CP-A-01: Selenium WebDriver para automatizar
-		     la sesión real de navegador de escritorio exigida por el plan
-		     de pruebas (login -> consultar workspace -> crear tarjeta) y
-		     medir el tiempo percibido por el usuario en cada paso. -->
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-java</artifactId>
-			<version>4.27.0</version>
-			<scope>test</scope>
-		</dependency>
-		<!-- Descarga y gestiona automáticamente el driver del navegador
-		     (chromedriver/geckodriver) según la versión instalada localmente. -->
-		<dependency>
-			<groupId>io.github.bonigarcia</groupId>
-			<artifactId>webdrivermanager</artifactId>
-			<version>5.9.2</version>
-			<scope>test</scope>
-		</dependency>
 	</dependencies>
-
 
 	<build>
 		<plugins>
