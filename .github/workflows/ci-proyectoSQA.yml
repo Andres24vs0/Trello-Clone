@@ -59,15 +59,13 @@ jobs:
 
             - name: Ejecutar inspección de SonarQube
               working-directory: ./estoNoEsTrello
-              # Asegúrate de configurar los secrets en tu repositorio de GitHub
-              # y de ajustar la URL y el ProjectKey a los de tu servidor SonarQube.
               run: |
                   chmod +x mvnw
                   ./mvnw -B sonar:sonar \
                     -Dsonar.projectKey=Andres24vs0_Trello-Clone \
+                    -Dsonar.organization=novam8 \
                     -Dsonar.host.url=https://sonarcloud.io \
                     -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-
             - name: Subir reporte de SonarQube local
               if: always()
               uses: actions/upload-artifact@v4
