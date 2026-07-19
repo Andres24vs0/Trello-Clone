@@ -38,6 +38,43 @@ jobs:
                   name: evidencias-unitarias
                   path: estoNoEsTrello/target/surefire-reports/
 
+    static-analysis:
+        name: Análisis estático con SonarQube
+        needs: unit-tests
+        if: success() || failure()
+        runs-on: ubuntu-latest
+        timeout-minutes: 30
+        env:
+            JAVA_VERSION: "17"
+        steps:
+            - name: Clonar repositorio
+              uses: actions/checkout@v4
+
+            - name: Configurar Java ${{ env.JAVA_VERSION }}
+              uses: actions/setup-java@v4
+              with:
+                  distribution: temurin
+                  java-version: ${{ env.JAVA_VERSION }}
+                  cache: maven
+
+            - name: Ejecutar inspección de SonarQube
+              working-directory: ./estoNoEsTrello
+              # Asegúrate de configurar los secrets en tu repositorio de GitHub
+              # y de ajustar la URL y el ProjectKey a los de tu servidor SonarQube.
+              run: |
+                  chmod +x mvnw
+                  ./mvnw -B sonar:sonar \
+                    -Dsonar.projectKey=Andres24vs0_Trello-Clone \
+                    -Dsonar.host.url=https://sonarcloud.io \
+                    -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+
+            - name: Subir reporte de SonarQube local
+              if: always()
+              uses: actions/upload-artifact@v4
+              with:
+                  name: evidencias-sonarqube
+                  path: estoNoEsTrello/target/sonar/
+
     integration-tests:
         name: Pruebas de integración
         needs: unit-tests
@@ -134,13 +171,13 @@ jobs:
             - name: Ejecutar CP-S-01/02 (Carga escalonada)
               run: |
                   for threads in 10 50 100; do
-                    mkdir -p jmeter-report/${threads}u
+                    mkdir -p estoNoEsTrello/jmeter-report/${threads}u
                     jmeter -n -t estoNoEsTrello/performance-tests/jmeter/kanban-crud-plan.jmx \
                       -Jhost=127.0.0.1 -Jport=8080 -Jthreads=${threads} -Jrampup=10 -Jduration=300 \
-                      -l jmeter-report/${threads}u/results.jtl -e -o jmeter-report/${threads}u/html
+                      -l estoNoEsTrello/jmeter-report/${threads}u/results.jtl -e -o estoNoEsTrello/jmeter-report/${threads}u/html
                   done
 
-            - name: Pruebas de carga JMeter — CP-S-04 (capacidad máxima)
+            - name: Pruebas de carga JMeter — CP-S-03 (capacidad máxima)
               if: always()
               continue-on-error: true
               run: |
