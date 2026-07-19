@@ -29,7 +29,7 @@ jobs:
               working-directory: ./estoNoEsTrello
               run: |
                   chmod +x mvnw
-                  ./mvnw -B -Dtest='EstoNoEsTrelloApplicationTests' test
+                  ./mvnw -B test -Dtest="!CPIntegrationTests"
 
     integration-tests:
         name: Pruebas de integración
@@ -148,6 +148,6 @@ jobs:
                   name: sqa-evidencias
                   path: |
                       estoNoEsTrello/target/surefire-reports/
-                      evidencias/
-                      jmeter-report/
+                      estoNoEsTrello/evidencias/
+                      estoNoEsTrello/jmeter-report/
                   if-no-files-found: ignore
