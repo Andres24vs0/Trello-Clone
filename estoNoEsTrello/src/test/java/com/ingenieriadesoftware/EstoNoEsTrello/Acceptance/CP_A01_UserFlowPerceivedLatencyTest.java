@@ -50,9 +50,9 @@ class CP_A01_UserFlowPerceivedLatencyTest {
     private static final long UMBRAL_MS = 2000L;
 
     // Datos de prueba nominales (ya existentes en Users.json)
-    private static final String EMAIL = "albertrodri2710@gmail.com";
-    private static final String PASSWORD = "123";
-    private static final String WORKSPACE_NAME = "WorkSpace 1";
+    private static final String EMAIL = "usuario1@carga.test";
+    private static final String PASSWORD = "Password123!";
+    private static final String WORKSPACE_NAME = "Espacio 1";
 
     @LocalServerPort
     private int port;
@@ -123,6 +123,25 @@ class CP_A01_UserFlowPerceivedLatencyTest {
 
         long start = System.nanoTime();
         driver.findElement(By.id("start_sesion_button")).click();
+
+        // Si /user/login responde con error (p.ej. 500 por datos corruptos en
+        // Users.json), login.js dispara un alert() de JavaScript que bloquea
+        // cualquier comando posterior de Selenium (UnhandledAlertException).
+        // Se detecta explícitamente para dar un mensaje de fallo claro en vez
+        // de una excepción críptica de Selenium.
+        try {
+            new WebDriverWait(driver, Duration.ofSeconds(3))
+                    .until(ExpectedConditions.alertIsPresent());
+            String alertText = driver.switchTo().alert().getText();
+            driver.switchTo().alert().accept();
+            throw new AssertionError(
+                    "El servidor respondio con error al hacer login (alert del navegador: '"
+                            + alertText + "'). Verifique que Users.json no tenga registros "
+                            + "corruptos (p. ej. \"email\": null) antes de repetir CP-A-01.");
+        } catch (org.openqa.selenium.TimeoutException noAlert) {
+            // Camino feliz: no hubo alert, el login respondió OK.
+        }
+
         // El usuario "termina" el paso cuando ve la grilla de espacios de trabajo cargada
         wait.until(ExpectedConditions.urlContains("select_workspace.html"));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.className("board-card")));
