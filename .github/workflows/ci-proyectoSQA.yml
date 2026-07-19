@@ -59,13 +59,15 @@ jobs:
 
             - name: Ejecutar inspección de SonarQube
               working-directory: ./estoNoEsTrello
+              env:
+                  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
               run: |
                   chmod +x mvnw
                   ./mvnw -B sonar:sonar \
                     -Dsonar.projectKey=Andres24vs0_Trello-Clone \
                     -Dsonar.organization=novam8 \
-                    -Dsonar.host.url=https://sonarcloud.io \
-                    -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+                    -Dsonar.host.url=https://sonarcloud.io
+                    
             - name: Subir reporte de SonarQube local
               if: always()
               uses: actions/upload-artifact@v4
