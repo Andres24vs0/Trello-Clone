@@ -1,116 +1,130 @@
 name: CI - SQA Trello Clone
 
 on:
-  push:
-    branches: [main, develop]
-  pull_request:
-    branches: [main]
-  workflow_dispatch:
+    push:
+        branches: [main, develop]
+    pull_request:
+        branches: [main]
+    workflow_dispatch:
 
 jobs:
-  unit-tests:
-    name: Pruebas unitarias
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    env:
-      JAVA_VERSION: "17"
-    steps:
-      - name: Clonar repositorio
-        uses: actions/checkout@v4
+    unit-tests:
+        name: Pruebas unitarias
+        runs-on: ubuntu-latest
+        timeout-minutes: 30
+        env:
+            JAVA_VERSION: "17"
+        steps:
+            - name: Clonar repositorio
+              uses: actions/checkout@v4
 
-      - name: Configurar Java ${{ env.JAVA_VERSION }}
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: ${{ env.JAVA_VERSION }}
-          cache: maven
+            - name: Configurar Java ${{ env.JAVA_VERSION }}
+              uses: actions/setup-java@v4
+              with:
+                  distribution: temurin
+                  java-version: ${{ env.JAVA_VERSION }}
+                  cache: maven
 
-      - name: Ejecutar pruebas unitarias del backend
-        working-directory: ./estoNoEsTrello
-        run: |
-          chmod +x mvnw
-          ./mvnw -B test -Dtest="!CPIntegrationTests"
+            - name: Ejecutar pruebas unitarias del backend
+              working-directory: ./estoNoEsTrello
+              run: |
+                  chmod +x mvnw
+                  ./mvnw -B test -Dtest="!CPIntegrationTests"
 
-  integration-tests:
-    name: Pruebas de integración
-    needs: unit-tests
-    if: success() || failure() #
-    runs-on: ubuntu-latest
-    timeout-minutes: 45
-    env:
-      JAVA_VERSION: "17"
-    steps:
-      - name: Clonar repositorio
-        uses: actions/checkout@v4
+            - name: Subir evidencias de pruebas unitarias
+              if: always()
+              uses: actions/upload-artifact@v4
+              with:
+                  name: evidencias-unitarias
+                  path: estoNoEsTrello/target/surefire-reports/
 
-      - name: Configurar Java ${{ env.JAVA_VERSION }}
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: ${{ env.JAVA_VERSION }}
-          cache: maven
+    integration-tests:
+        name: Pruebas de integración
+        needs: unit-tests
+        if: success() || failure()
+        runs-on: ubuntu-latest
+        timeout-minutes: 45
+        env:
+            JAVA_VERSION: "17"
+        steps:
+            - name: Clonar repositorio
+              uses: actions/checkout@v4
 
-      - name: Ejecutar pruebas de integración del backend
-        working-directory: ./estoNoEsTrello
-        run: |
-          chmod +x mvnw
-          ./mvnw -B -Dtest='CPIntegrationTests' test
+            - name: Configurar Java ${{ env.JAVA_VERSION }}
+              uses: actions/setup-java@v4
+              with:
+                  distribution: temurin
+                  java-version: ${{ env.JAVA_VERSION }}
+                  cache: maven
 
-  system-tests:
-    name: Pruebas de sistema y contenedores
-    needs: [unit-tests, integration-tests]
-    if: success() || failure() # <--- Condición para que no se detenga si fallan las de integración
-    runs-on: ubuntu-latest
-    timeout-minutes: 75
-    env:
-      JAVA_VERSION: "17"
-    steps:
-      - name: Clonar repositorio
-        uses: actions/checkout@v4
+            - name: Ejecutar pruebas de integración del backend
+              working-directory: ./estoNoEsTrello
+              run: |
+                  chmod +x mvnw
+                  ./mvnw -B -Dtest='CPIntegrationTests' test
 
-      - name: Configurar Java ${{ env.JAVA_VERSION }}
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: ${{ env.JAVA_VERSION }}
-          cache: maven
+            - name: Subir evidencias de pruebas de integración
+              if: always()
+              uses: actions/upload-artifact@v4
+              with:
+                  name: evidencias-integracion
+                  path: estoNoEsTrello/target/surefire-reports/
 
-      - name: Empaquetar aplicación backend
-        working-directory: ./estoNoEsTrello
-        run: |
-          chmod +x mvnw
-          ./mvnw -B -DskipTests package
+    system-tests:
+        name: Pruebas de sistema y contenedores
+        needs: [unit-tests, integration-tests]
+        if: success() || failure()
+        runs-on: ubuntu-latest
+        timeout-minutes: 75
+        env:
+            JAVA_VERSION: "17"
+        steps:
+            - name: Clonar repositorio
+              uses: actions/checkout@v4
 
-      # --- CP-S-01 / CP-S-02: precondición de volumen nominal (10 usuarios, 5 espacios c/u) ---
-      - name: Sembrar dataset nominal (precondición CP-S-01/CP-S-02)
-        working-directory: ./estoNoEsTrello
-        run: |
-          ./mvnw -q exec:java \
-            -Dexec.mainClass=com.ingenieriadesoftware.EstoNoEsTrello.testutils.PerformanceDataSeeder \
-            -Dexec.classpathScope=test \
-            -Dexec.args="nominal"
+            - name: Configurar Java ${{ env.JAVA_VERSION }}
+              uses: actions/setup-java@v4
+              with:
+                  distribution: temurin
+                  java-version: ${{ env.JAVA_VERSION }}
+                  cache: maven
 
-      - name: Respaldar dataset nominal (para poder reiniciarlo entre corridas)
-        run: |
-          cp estoNoEsTrello/src/main/resources/JSONs/Users.json \
-             estoNoEsTrello/src/main/resources/JSONs/Users.nominal.seed.json
+            - name: Empaquetar aplicación backend
+              working-directory: ./estoNoEsTrello
+              run: |
+                  chmod +x mvnw
+                  ./mvnw -B -DskipTests package
 
-      - name: Levantar infraestructura Docker
-        run: docker compose up --build -d
+            # --- CP-S-01 / CP-S-02: precondición de volumen nominal (10 usuarios, 5 espacios c/u) ---
+            - name: Sembrar dataset nominal (precondición CP-S-01/CP-S-02)
+              working-directory: ./estoNoEsTrello
+              run: |
+                  ./mvnw -q exec:java \
+                    -Dexec.mainClass=com.ingenieriadesoftware.EstoNoEsTrello.testutils.PerformanceDataSeeder \
+                    -Dexec.classpathScope=test \
+                    -Dexec.args="nominal"
 
-      - name: Esperar al contenedor de la aplicación
-        run: |
-          for i in $(seq 1 30); do
-            if curl -fsS http://127.0.0.1:8080/actuator/health >/dev/null 2>&1; then
-              echo "Contenedor listo en http://127.0.0.1:8080"
-              exit 0
-            fi
-            echo "Esperando que el contenedor inicie... intento $i/30"
-            sleep 5
-          done
-          docker compose ps
-          docker compose logs kanban-app || true
-          exit 1
+            - name: Respaldar dataset nominal (para poder reiniciarlo entre corridas)
+              run: |
+                  cp estoNoEsTrello/src/main/resources/JSONs/Users.json \
+                     estoNoEsTrello/src/main/resources/JSONs/Users.nominal.seed.json
+
+            - name: Levantar infraestructura Docker
+              run: docker compose up --build -d
+
+            - name: Esperar al contenedor de la aplicación
+              run: |
+                  for i in $(seq 1 30); do
+                    if curl -fsS http://127.0.0.1:8080/actuator/health >/dev/null 2>&1; then
+                      echo "Contenedor listo en http://127.0.0.1:8080"
+                      exit 0
+                    fi
+                    echo "Esperando que el contenedor inicie... intento $i/30"
+                    sleep 5
+                  done
+                  docker compose ps
+                  docker compose logs kanban-app || true
+                  exit 1
 
             - name: Instalar JMeter
               run: |
@@ -131,13 +145,13 @@ jobs:
               continue-on-error: true
               run: |
                   docker compose stop kanban-app
-                  
+
                   # Usamos paréntesis para que el 'cd' solo aplique a esta línea y no rompa el path de JMeter
                   (cd estoNoEsTrello && ./mvnw -q exec:java -Dexec.mainClass=com.ingenieriadesoftware.EstoNoEsTrello.testutils.PerformanceDataSeeder -Dexec.classpathScope=test -Dexec.args="max")
-                  
+
                   docker compose start kanban-app
                   sleep 20
-                  
+
                   mkdir -p estoNoEsTrello/jmeter-report/cp-s-03
                   jmeter -n \
                     -t estoNoEsTrello/performance-tests/jmeter/kanban-crud-plan.jmx \
