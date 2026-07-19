@@ -31,6 +31,13 @@ jobs:
                   chmod +x mvnw
                   ./mvnw -B test -Dtest="!CPIntegrationTests"
 
+            - name: Subir reportes de Unit Tests
+              if: always()
+              uses: actions/upload-artifact@v4
+              with:
+                  name: surefire-unit-tests
+                  path: estoNoEsTrello/target/surefire-reports/
+
     integration-tests:
         name: Pruebas de integración
         needs: unit-tests
@@ -54,6 +61,13 @@ jobs:
               run: |
                   chmod +x mvnw
                   ./mvnw -B -Dtest='CPIntegrationTests' test
+
+            - name: Subir reportes de Integration Tests
+              if: always()
+              uses: actions/upload-artifact@v4
+              with:
+                  name: surefire-integration-tests
+                  path: estoNoEsTrello/target/surefire-reports/
 
     system-tests:
         name: Pruebas de sistema y contenedores
@@ -136,18 +150,11 @@ jobs:
                   docker compose ps > evidencias/docker-ps.txt || true
                   docker compose logs kanban-app > evidencias/docker-logs.txt || true
 
-    evidence:
-        name: Publicar evidencias SQA
-        needs: [unit-tests, integration-tests, system-tests]
-        if: always()
-        runs-on: ubuntu-latest
-        steps:
-            - name: Subir artefactos
+            - name: Subir evidencias de Sistema
+              if: always()
               uses: actions/upload-artifact@v4
               with:
-                  name: sqa-evidencias
+                  name: evidencias-sistema
                   path: |
-                      estoNoEsTrello/target/surefire-reports/
-                      estoNoEsTrello/evidencias/
-                      estoNoEsTrello/jmeter-report/
-                  if-no-files-found: ignore
+                      evidencias/
+                      jmeter-report/
