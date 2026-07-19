@@ -4,24 +4,15 @@ services:
       context: ./estoNoEsTrello
       dockerfile: Dockerfile
     container_name: nova_kanban_app
-    environment:
-      JAVA_OPTS: >-
-        -Dcom.sun.management.jmxremote
-        -Dcom.sun.management.jmxremote.port=9010
-        -Dcom.sun.management.jmxremote.rmi.port=9010
-        -Dcom.sun.management.jmxremote.authenticate=false
-        -Dcom.sun.management.jmxremote.ssl=false
-        -Djava.rmi.server.hostname=localhost
     ports:
       - "8080:8080"
-      - "9010:9010"
     volumes:
       - ./estoNoEsTrello/src/main/resources/JSONs:/app/JSONs
     deploy:
       resources:
         limits:
-          cpus: '0.50'
+          cpus: "0.50"
           memory: 512M
         reservations:
-          cpus: '0.25'
+          cpus: "0.25"
           memory: 256M
