@@ -119,24 +119,6 @@ jobs:
           tar -xzf "$RUNNER_TEMP/apache-jmeter-$JMETER_VERSION.tgz" -C "$RUNNER_TEMP"
           echo "$JMETER_HOME/bin" >> "$GITHUB_PATH"
 
-      # --- CP-S-03: monitoreo de recursos del contenedor durante 15 minutos, ---
-      # --- en paralelo con las tres corridas de CP-S-01/CP-S-02 de abajo.    ---
-      - name: Iniciar monitoreo de docker stats (CP-S-03)
-        run: |
-          mkdir -p estoNoEsTrello/evidencias
-          (
-            for i in $(seq 1 15); do
-              {
-                echo "--- Minuto $i ---"
-                date -u +"%Y-%m-%dT%H:%M:%SZ"
-                docker stats nova_kanban_app --no-stream \
-                  --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}\t{{.MemPerc}}"
-              } >> estoNoEsTrello/evidencias/docker-stats.txt
-              sleep 60
-            done
-          ) &
-          echo $! > docker_stats_pid.txt
-
       # --- CP-S-01 (hilos=10) y CP-S-02 (hilos=10,50,100): 3 corridas de 5 min = 15 min ---
       - name: Pruebas de carga JMeter — CP-S-01/CP-S-02 (10, 50 y 100 usuarios virtuales)
         if: always()
@@ -157,13 +139,6 @@ jobs:
             done
           else
             echo "No existe el plan JMeter en la ruta esperada; se omite esta etapa."
-          fi
-
-      - name: Detener monitoreo de docker stats (CP-S-03)
-        if: always()
-        run: |
-          if [ -f docker_stats_pid.txt ]; then
-            kill "$(cat docker_stats_pid.txt)" 2>/dev/null || true
           fi
 
       # --- CP-S-04: capacidad máxima declarada por el ERS (15x50x50 = 37.500 tarjetas) ---
