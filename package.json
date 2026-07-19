@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "jmeter": "^0.0.1",
     "sweetalert2": "^11.22.0"
   }
 }

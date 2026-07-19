@@ -30,18 +30,21 @@ import java.util.List;
  * <p>
  * Sobrescribe Users.json con uno de dos escenarios:
  * <ul>
- *   <li><b>nominal</b>: 100 usuarios (usuario1@carga.test ... usuario100@carga.test),
- *   cada uno con 5 Workspaces vacíos (sin Blocks/Cards). Cubre el volumen
- *   nominal de CP-S-01 (10 usuarios x 5 espacios) y soporta hasta 100
- *   hilos virtuales concurrentes de CP-S-02, cada uno operando sobre un
- *   usuario distinto (variable JMeter __threadNum mapea 1:1 a usuarioN@carga.test).</li>
- *   <li><b>max</b>: el escenario "nominal" completo, más un usuario adicional
- *   ("usuariomax@carga.test") sembrado en el volumen máximo declarado por
- *   el ERS: 15 Workspaces x 50 Blocks x 50 Cards = 37.500 tarjetas. Este es
- *   el dataset requerido por CP-I-03 y CP-S-04.</li>
+ * <li><b>nominal</b>: 100 usuarios (usuario1@carga.test ...
+ * usuario100@carga.test),
+ * cada uno con 5 Workspaces vacíos (sin Blocks/Cards). Cubre el volumen
+ * nominal de CP-S-01 (10 usuarios x 5 espacios) y soporta hasta 100
+ * hilos virtuales concurrentes de CP-S-02, cada uno operando sobre un
+ * usuario distinto (variable JMeter __threadNum mapea 1:1 a
+ * usuarioN@carga.test).</li>
+ * <li><b>max</b>: el escenario "nominal" completo, más un usuario adicional
+ * ("usuariomax@carga.test") sembrado en el volumen máximo declarado por
+ * el ERS: 15 Workspaces x 50 Blocks x 50 Cards = 37.500 tarjetas. Este es
+ * el dataset requerido por CP-I-03 y CP-S-04.</li>
  * </ul>
  * <p>
  * Uso:
+ * 
  * <pre>
  *   mvn -q test-compile exec:java \
  *     -Dexec.mainClass=com.ingenieriadesoftware.EstoNoEsTrello.testutils.PerformanceDataSeeder \
@@ -53,6 +56,7 @@ import java.util.List;
  *     -Dexec.classpathScope=test \
  *     -Dexec.args="max"
  * </pre>
+ * 
  * El primer argumento es el escenario ("nominal" o "max"). El segundo
  * argumento (opcional) es la ruta de salida; por defecto
  * src/main/resources/JSONs/Users.json (la ruta que UserJsonController lee
@@ -60,7 +64,8 @@ import java.util.List;
  * <p>
  * IMPORTANTE: ejecutar este script con el servidor DETENIDO y volver a
  * levantarlo (mvn spring-boot:run) después de sembrar, para que Maven
- * copie el nuevo Users.json a target/classes antes de que Tomcat lo lea.
+ * copie el nuevo Users.json a target/classes antes de que la aplicación
+ * lo lea en tiempo de ejecución.
  */
 public final class PerformanceDataSeeder {
 
@@ -125,7 +130,8 @@ public final class PerformanceDataSeeder {
         }
 
         @Override
-        public LocalDate deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
+        public LocalDate deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
+                throws JsonParseException {
             return LocalDate.parse(json.getAsString(), DateTimeFormatter.ISO_LOCAL_DATE);
         }
     }

@@ -184,7 +184,8 @@ public class CPIntegrationTests {
 
             // verify that findTotalUsers was called 5 times
             mocked.verify(UserJsonController::findTotalUsers, times(5));
-            System.out.println("=== CP-I-04: Relecturas completas de archivo detectadas = 5 (Meta deseable declarada: 1) ===");
+            System.out.println(
+                    "=== CP-I-04: Relecturas completas de archivo detectadas = 5 (Meta deseable declarada: 1) ===");
         }
     }
 }

@@ -1,0 +1,153 @@
+name: CI - SQA Trello Clone
+
+on:
+    push:
+        branches: [main, develop]
+    pull_request:
+        branches: [main]
+    workflow_dispatch:
+
+jobs:
+    unit-tests:
+        name: Pruebas unitarias
+        runs-on: ubuntu-latest
+        timeout-minutes: 30
+        env:
+            JAVA_VERSION: "17"
+        steps:
+            - name: Clonar repositorio
+              uses: actions/checkout@v4
+
+            - name: Configurar Java ${{ env.JAVA_VERSION }}
+              uses: actions/setup-java@v4
+              with:
+                  distribution: temurin
+                  java-version: ${{ env.JAVA_VERSION }}
+                  cache: maven
+
+            - name: Ejecutar pruebas unitarias del backend
+              working-directory: ./estoNoEsTrello
+              run: |
+                  chmod +x mvnw
+                  ./mvnw -B -Dtest='EstoNoEsTrelloApplicationTests' test
+
+    integration-tests:
+        name: Pruebas de integración
+        needs: unit-tests
+        runs-on: ubuntu-latest
+        timeout-minutes: 45
+        env:
+            JAVA_VERSION: "17"
+        steps:
+            - name: Clonar repositorio
+              uses: actions/checkout@v4
+
+            - name: Configurar Java ${{ env.JAVA_VERSION }}
+              uses: actions/setup-java@v4
+              with:
+                  distribution: temurin
+                  java-version: ${{ env.JAVA_VERSION }}
+                  cache: maven
+
+            - name: Ejecutar pruebas de integración del backend
+              working-directory: ./estoNoEsTrello
+              run: |
+                  chmod +x mvnw
+                  ./mvnw -B -Dtest='CPIntegrationTests' test
+
+    system-tests:
+        name: Pruebas de sistema y contenedores
+        needs: [unit-tests, integration-tests]
+        if: success() || failure() # <--- Condición para que no se detenga si fallan las de integración
+        runs-on: ubuntu-latest
+        timeout-minutes: 60
+        env:
+            JAVA_VERSION: "17"
+        steps:
+            - name: Clonar repositorio
+              uses: actions/checkout@v4
+
+            - name: Configurar Java ${{ env.JAVA_VERSION }}
+              uses: actions/setup-java@v4
+              with:
+                  distribution: temurin
+                  java-version: ${{ env.JAVA_VERSION }}
+                  cache: maven
+
+            - name: Empaquetar aplicación backend
+              working-directory: ./estoNoEsTrello
+              run: |
+                  chmod +x mvnw
+                  ./mvnw -B -DskipTests package
+
+            - name: Levantar infraestructura Docker
+              run: docker compose up --build -d
+
+            - name: Esperar al contenedor de la aplicación
+              run: |
+                  for i in $(seq 1 30); do
+                    if curl -fsS http://127.0.0.1:8080/actuator/health >/dev/null 2>&1; then
+                      echo "Contenedor listo en http://127.0.0.1:8080"
+                      exit 0
+                    fi
+                    echo "Esperando que el contenedor inicie... intento $i/30"
+                    sleep 5
+                  done
+                  docker compose ps
+                  docker compose logs kanban-app || true
+                  exit 1
+
+            - name: Smoke test del contenedor Docker
+              run: curl -fsS http://127.0.0.1:8080/ | head
+
+            - name: Instalar JMeter portátil para Docker
+              run: |
+                  JMETER_VERSION=5.6.3
+                  JMETER_HOME="$RUNNER_TEMP/apache-jmeter-$JMETER_VERSION"
+                  curl -L --fail --retry 3 --retry-delay 5 \
+                    -o "$RUNNER_TEMP/apache-jmeter-$JMETER_VERSION.tgz" \
+                    "https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-$JMETER_VERSION.tgz"
+                  tar -xzf "$RUNNER_TEMP/apache-jmeter-$JMETER_VERSION.tgz" -C "$RUNNER_TEMP"
+                  echo "$JMETER_HOME/bin" >> "$GITHUB_PATH"
+
+            - name: Pruebas de rendimiento JMeter
+              if: always()
+              continue-on-error: true
+              run: |
+                  if [ -f estoNoEsTrello/performance-tests/jmeter/kanban-crud-plan.jmx ]; then
+                    mkdir -p jmeter-report
+                    jmeter -n \
+                      -t estoNoEsTrello/performance-tests/jmeter/kanban-crud-plan.jmx \
+                      -Jhost=127.0.0.1 \
+                      -Jport=8080 \
+                      -Jthreads=2 \
+                      -Jrampup=1 \
+                      -Jduration=30 \
+                      -l jmeter-report/results.jtl \
+                      -e -o jmeter-report/html
+                  else
+                    echo "No existe el plan JMeter en la ruta esperada; se omite esta etapa."
+                  fi
+
+            - name: Capturar evidencias de Docker
+              if: always()
+              run: |
+                  mkdir -p evidencias
+                  docker compose ps > evidencias/docker-ps.txt || true
+                  docker compose logs kanban-app > evidencias/docker-logs.txt || true
+
+    evidence:
+        name: Publicar evidencias SQA
+        needs: [unit-tests, integration-tests, system-tests]
+        if: always()
+        runs-on: ubuntu-latest
+        steps:
+            - name: Subir artefactos
+              uses: actions/upload-artifact@v4
+              with:
+                  name: sqa-evidencias
+                  path: |
+                      estoNoEsTrello/target/surefire-reports/
+                      evidencias/
+                      jmeter-report/
+                  if-no-files-found: ignore

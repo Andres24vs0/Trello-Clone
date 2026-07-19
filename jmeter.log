@@ -1,0 +1,209 @@
+2026-07-18 23:48:29,428 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2026-07-18 23:48:29,840 INFO o.a.j.JMeter: Loading user properties from: C:\Users\andre\OneDrive\Escritorio\UCAB\Semestre 8\QA\Trello-Clone\tools\jmeter\apache-jmeter-5.6.3\bin\user.properties
+2026-07-18 23:48:29,843 INFO o.a.j.JMeter: Loading system properties from: C:\Users\andre\OneDrive\Escritorio\UCAB\Semestre 8\QA\Trello-Clone\tools\jmeter\apache-jmeter-5.6.3\bin\system.properties
+2026-07-18 23:48:29,849 INFO o.a.j.JMeter: Setting JMeter property: host=127.0.0.1
+2026-07-18 23:48:29,851 INFO o.a.j.JMeter: Setting JMeter property: port=8080
+2026-07-18 23:48:29,852 INFO o.a.j.JMeter: Setting JMeter property: threads=2
+2026-07-18 23:48:29,852 INFO o.a.j.JMeter: Setting JMeter property: rampup=1
+2026-07-18 23:48:29,852 INFO o.a.j.JMeter: Setting JMeter property: duration=30
+2026-07-18 23:48:29,950 INFO o.a.j.JMeter: Copyright (c) 1998-2024 The Apache Software Foundation
+2026-07-18 23:48:29,951 INFO o.a.j.JMeter: Version 5.6.3
+2026-07-18 23:48:29,951 INFO o.a.j.JMeter: java.version=17.0.19
+2026-07-18 23:48:29,951 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2026-07-18 23:48:29,952 INFO o.a.j.JMeter: os.name=Windows 11
+2026-07-18 23:48:29,952 INFO o.a.j.JMeter: os.arch=amd64
+2026-07-18 23:48:29,952 INFO o.a.j.JMeter: os.version=10.0
+2026-07-18 23:48:29,952 INFO o.a.j.JMeter: file.encoding=Cp1252
+2026-07-18 23:48:29,952 INFO o.a.j.JMeter: java.awt.headless=true
+2026-07-18 23:48:29,953 INFO o.a.j.JMeter: Max memory     =1073741824
+2026-07-18 23:48:29,953 INFO o.a.j.JMeter: Available Processors =12
+2026-07-18 23:48:30,456 INFO o.a.j.JMeter: Default Locale=English (EN)
+2026-07-18 23:48:30,458 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2026-07-18 23:48:30,458 INFO o.a.j.JMeter: JMeterHome=C:\Users\andre\OneDrive\Escritorio\UCAB\Semestre 8\QA\Trello-Clone\tools\jmeter\apache-jmeter-5.6.3
+2026-07-18 23:48:30,458 INFO o.a.j.JMeter: user.dir  =C:\Users\andre\OneDrive\Escritorio\UCAB\Semestre 8\QA\Trello-Clone
+2026-07-18 23:48:30,467 INFO o.a.j.JMeter: PWD       =C:\Users\andre\OneDrive\Escritorio\UCAB\Semestre 8\QA\Trello-Clone
+2026-07-18 23:48:30,717 INFO o.a.j.JMeter: IP: 192.168.0.103 Name: LaptopDeAndrés FullName: 192.168.0.103
+2026-07-18 23:48:30,832 INFO o.a.j.JMeter: Setting property 'jmeter.reportgenerator.outputdir' to:'C:\Users\andre\OneDrive\Escritorio\UCAB\Semestre 8\QA\Trello-Clone\jmeter-report\html'
+2026-07-18 23:48:30,849 INFO o.a.j.s.FileServer: Default base='C:\Users\andre\OneDrive\Escritorio\UCAB\Semestre 8\QA\Trello-Clone'
+2026-07-18 23:48:30,859 INFO o.a.j.s.FileServer: Set new base='C:\Users\andre\OneDrive\Escritorio\UCAB\Semestre 8\QA\Trello-Clone\estoNoEsTrello\performance-tests\jmeter'
+2026-07-18 23:48:34,435 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2026-07-18 23:48:34,566 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2026-07-18 23:48:34,585 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2026-07-18 23:48:34,608 INFO o.a.j.s.SaveService: Loading file: C:\Users\andre\OneDrive\Escritorio\UCAB\Semestre 8\QA\Trello-Clone\estoNoEsTrello\performance-tests\jmeter\kanban-crud-plan.jmx
+2026-07-18 23:48:35,413 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-07-18 23:48:35,413 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-07-18 23:48:35,413 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-07-18 23:48:35,414 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-07-18 23:48:35,414 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2026-07-18 23:48:35,414 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2026-07-18 23:48:36,178 INFO o.a.j.JMeter: Creating summariser <summary>
+2026-07-18 23:48:36,207 INFO o.a.j.r.d.ReportGenerator: ReportGenerator will use for Parsing the separator: ','
+2026-07-18 23:48:36,207 INFO o.a.j.r.d.ReportGenerator: Will generate report at end of test from  results file: C:\Users\andre\OneDrive\Escritorio\UCAB\Semestre 8\QA\Trello-Clone\jmeter-report\results.jtl
+2026-07-18 23:48:36,208 INFO o.a.j.r.d.ReportGenerator: Reading report generator properties from: C:\Users\andre\OneDrive\Escritorio\UCAB\Semestre 8\QA\Trello-Clone\tools\jmeter\apache-jmeter-5.6.3\bin\reportgenerator.properties
+2026-07-18 23:48:36,209 INFO o.a.j.r.d.ReportGenerator: Merging with JMeter properties
+2026-07-18 23:48:36,255 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.temp_dir' not found, using default value 'temp' instead.
+2026-07-18 23:48:36,268 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.apdex_per_transaction' not found, using default value 'null' instead.
+2026-07-18 23:48:36,269 INFO o.a.j.r.c.ReportGeneratorConfiguration: apdex_per_transaction is empty, not APDEX per transaction customization
+2026-07-18 23:48:36,270 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.sample_filter' not found, using default value 'null' instead.
+2026-07-18 23:48:36,270 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.report_title' not found, using default value 'null' instead.
+2026-07-18 23:48:36,271 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.start_date' not found, using default value 'null' instead.
+2026-07-18 23:48:36,272 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.end_date' not found, using default value 'null' instead.
+2026-07-18 23:48:36,272 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.date_format' not found, using default value 'null' instead.
+2026-07-18 23:48:36,274 INFO o.a.j.r.c.ReportGeneratorConfiguration: Will use date range start date: null, end date: null
+2026-07-18 23:48:36,294 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.totalTPS.exclude_controllers' not found, using default value 'false' instead.
+2026-07-18 23:48:36,296 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.activeThreadsOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-07-18 23:48:36,297 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.timeVsThreads.exclude_controllers' not found, using default value 'false' instead.
+2026-07-18 23:48:36,297 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimeDistribution.exclude_controllers' not found, using default value 'false' instead.
+2026-07-18 23:48:36,297 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.transactionsPerSecond.exclude_controllers' not found, using default value 'false' instead.
+2026-07-18 23:48:36,298 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentiles.exclude_controllers' not found, using default value 'false' instead.
+2026-07-18 23:48:36,298 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentilesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-07-18 23:48:36,298 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-07-18 23:48:36,299 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.connectTimeOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-07-18 23:48:36,299 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.latenciesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-07-18 23:48:36,335 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.filters_only_sample_series' not found, using default value 'true' instead.
+2026-07-18 23:48:36,336 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.series_filter' not found, using default value '' instead.
+2026-07-18 23:48:36,337 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.show_controllers_only' not found, using default value 'false' instead.
+2026-07-18 23:48:36,339 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.filters_only_sample_series' not found, using default value 'true' instead.
+2026-07-18 23:48:36,339 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.series_filter' not found, using default value '' instead.
+2026-07-18 23:48:36,340 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.show_controllers_only' not found, using default value 'false' instead.
+2026-07-18 23:48:36,703 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2026-07-18 23:48:36,931 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2026-07-18 23:48:36,932 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2026-07-18 23:48:36,951 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2026-07-18 23:48:36,952 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2026-07-18 23:48:45,333 WARN o.a.j.f.Groovy: Error running groovy script
+javax.script.ScriptException: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+Script1.groovy: 1: Unexpected input: '+ String.format('%02d'' @ line 1, column 34.
+   'usuario.' + String.format('%02d'
+                                    ^
+
+1 error
+
+	at org.codehaus.groovy.jsr223.GroovyScriptEngineImpl.eval(GroovyScriptEngineImpl.java:158) ~[groovy-jsr223-3.0.20.jar:3.0.20]
+	at java.scripting/javax.script.AbstractScriptEngine.eval(AbstractScriptEngine.java:231) ~[java.scripting:?]
+	at org.apache.jmeter.functions.Groovy.execute(Groovy.java:123) [ApacheJMeter_functions.jar:5.6.3]
+	at org.apache.jmeter.engine.util.CompoundVariable.execute(CompoundVariable.java:139) [ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.engine.util.CompoundVariable.execute(CompoundVariable.java:114) [ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.testelement.property.FunctionProperty.getStringValue(FunctionProperty.java:104) [ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.testelement.TestElement.get(TestElement.kt:276) [ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.config.Argument.getValue(Argument.java:154) [ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.config.Arguments.getArgumentsAsMap(Arguments.java:104) [ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.testelement.TestPlan.getUserDefinedVariables(TestPlan.java:112) [ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.engine.PreCompiler.createVars(PreCompiler.java:125) [ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.engine.PreCompiler.addNode(PreCompiler.java:95) [ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jorphan.collections.HashTree.traverse(HashTree.java:1011) [jorphan.jar:5.6.3]
+	at org.apache.jmeter.engine.StandardJMeterEngine.run(StandardJMeterEngine.java:413) [ApacheJMeter_core.jar:5.6.3]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) [?:?]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.base/java.lang.Thread.run(Thread.java:840) [?:?]
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+Script1.groovy: 1: Unexpected input: '+ String.format('%02d'' @ line 1, column 34.
+   'usuario.' + String.format('%02d'
+                                    ^
+
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:292) ~[groovy-3.0.20.jar:3.0.20]
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:148) ~[groovy-3.0.20.jar:3.0.20]
+	at org.apache.groovy.parser.antlr4.AstBuilder.collectSyntaxError(AstBuilder.java:4301) ~[groovy-3.0.20.jar:3.0.20]
+	at org.apache.groovy.parser.antlr4.AstBuilder.access$000(AstBuilder.java:176) ~[groovy-3.0.20.jar:3.0.20]
+	at org.apache.groovy.parser.antlr4.AstBuilder$1.syntaxError(AstBuilder.java:4312) ~[groovy-3.0.20.jar:3.0.20]
+	at groovyjarjarantlr4.v4.runtime.ProxyErrorListener.syntaxError(ProxyErrorListener.java:44) ~[groovy-3.0.20.jar:3.0.20]
+	at groovyjarjarantlr4.v4.runtime.Parser.notifyErrorListeners(Parser.java:543) ~[groovy-3.0.20.jar:3.0.20]
+	at groovyjarjarantlr4.v4.runtime.DefaultErrorStrategy.notifyErrorListeners(DefaultErrorStrategy.java:154) ~[groovy-3.0.20.jar:3.0.20]
+	at org.apache.groovy.parser.antlr4.internal.DescriptiveErrorStrategy.reportNoViableAlternative(DescriptiveErrorStrategy.java:92) ~[groovy-3.0.20.jar:3.0.20]
+	at groovyjarjarantlr4.v4.runtime.DefaultErrorStrategy.reportError(DefaultErrorStrategy.java:139) ~[groovy-3.0.20.jar:3.0.20]
+	at org.apache.groovy.parser.antlr4.GroovyParser.expression(GroovyParser.java:9169) ~[groovy-3.0.20.jar:3.0.20]
+	at org.apache.groovy.parser.antlr4.GroovyParser.commandExpression(GroovyParser.java:9299) ~[groovy-3.0.20.jar:3.0.20]
+	at org.apache.groovy.parser.antlr4.GroovyParser.statementExpression(GroovyParser.java:8067) ~[groovy-3.0.20.jar:3.0.20]
+	at org.apache.groovy.parser.antlr4.GroovyParser.statement(GroovyParser.java:6915) ~[groovy-3.0.20.jar:3.0.20]
+	at org.apache.groovy.parser.antlr4.GroovyParser.scriptStatement(GroovyParser.java:514) ~[groovy-3.0.20.jar:3.0.20]
+	at org.apache.groovy.parser.antlr4.GroovyParser.scriptStatements(GroovyParser.java:410) ~[groovy-3.0.20.jar:3.0.20]
+	at org.apache.groovy.parser.antlr4.GroovyParser.compilationUnit(GroovyParser.java:357) ~[groovy-3.0.20.jar:3.0.20]
+	at org.apache.groovy.parser.antlr4.AstBuilder.buildCST(AstBuilder.java:250) ~[groovy-3.0.20.jar:3.0.20]
+	at org.apache.groovy.parser.antlr4.AstBuilder.buildCST(AstBuilder.java:228) ~[groovy-3.0.20.jar:3.0.20]
+	at org.apache.groovy.parser.antlr4.AstBuilder.buildAST(AstBuilder.java:269) ~[groovy-3.0.20.jar:3.0.20]
+	at org.apache.groovy.parser.antlr4.Antlr4ParserPlugin.buildAST(Antlr4ParserPlugin.java:58) ~[groovy-3.0.20.jar:3.0.20]
+	at org.codehaus.groovy.control.SourceUnit.buildAST(SourceUnit.java:256) ~[groovy-3.0.20.jar:3.0.20]
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133) ~[?:?]
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845) ~[?:?]
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762) ~[?:?]
+	at org.codehaus.groovy.control.CompilationUnit.buildASTs(CompilationUnit.java:667) ~[groovy-3.0.20.jar:3.0.20]
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:633) ~[groovy-3.0.20.jar:3.0.20]
+	at groovy.lang.GroovyClassLoader.doParseClass(GroovyClassLoader.java:389) ~[groovy-3.0.20.jar:3.0.20]
+	at groovy.lang.GroovyClassLoader.lambda$parseClass$3(GroovyClassLoader.java:332) ~[groovy-3.0.20.jar:3.0.20]
+	at org.codehaus.groovy.runtime.memoize.StampedCommonCache.compute(StampedCommonCache.java:163) ~[groovy-3.0.20.jar:3.0.20]
+	at org.codehaus.groovy.runtime.memoize.StampedCommonCache.getAndPut(StampedCommonCache.java:154) ~[groovy-3.0.20.jar:3.0.20]
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:330) ~[groovy-3.0.20.jar:3.0.20]
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:314) ~[groovy-3.0.20.jar:3.0.20]
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:257) ~[groovy-3.0.20.jar:3.0.20]
+	at org.codehaus.groovy.jsr223.GroovyScriptEngineImpl.getScriptClass(GroovyScriptEngineImpl.java:336) ~[groovy-jsr223-3.0.20.jar:3.0.20]
+	at org.codehaus.groovy.jsr223.GroovyScriptEngineImpl.eval(GroovyScriptEngineImpl.java:153) ~[groovy-jsr223-3.0.20.jar:3.0.20]
+	... 18 more
+2026-07-18 23:48:45,733 INFO o.a.j.JMeter: Running test (1784432925733)
+2026-07-18 23:48:45,820 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : CP-S CRUD Load
+2026-07-18 23:48:45,828 INFO o.a.j.e.StandardJMeterEngine: Starting 2 threads for group CP-S CRUD Load.
+2026-07-18 23:48:45,829 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-07-18 23:48:45,839 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=2 ramp-up=1 delayedStart=false
+2026-07-18 23:48:45,937 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2026-07-18 23:48:45,938 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2026-07-18 23:48:45,980 INFO o.a.j.t.JMeterThread: Thread started: CP-S CRUD Load 1-1
+2026-07-18 23:48:46,456 INFO o.a.j.t.JMeterThread: Thread started: CP-S CRUD Load 1-2
+2026-07-18 23:48:46,577 INFO o.a.j.p.h.s.HTTPHCAbstractImpl: Local host = LaptopDeAndrés
+2026-07-18 23:48:46,617 INFO o.a.j.p.h.s.HTTPHC4Impl: HTTP request retry count = 0
+2026-07-18 23:48:46,623 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2026-07-18 23:48:46,623 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to UTF-8
+2026-07-18 23:48:46,624 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2026-07-18 23:48:46,625 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2026-07-18 23:49:00,481 INFO o.a.j.r.Summariser: summary +    132 in 00:00:14 =    9.2/s Avg:   168 Min:    15 Max:  1417 Err:   132 (100.00%) Active: 2 Started: 2 Finished: 0
+2026-07-18 23:49:16,034 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: CP-S CRUD Load 1-2
+2026-07-18 23:49:16,034 INFO o.a.j.t.JMeterThread: Thread finished: CP-S CRUD Load 1-2
+2026-07-18 23:49:16,077 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: CP-S CRUD Load 1-1
+2026-07-18 23:49:16,077 INFO o.a.j.t.JMeterThread: Thread finished: CP-S CRUD Load 1-1
+2026-07-18 23:49:16,078 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2026-07-18 23:49:16,122 INFO o.a.j.r.Summariser: summary +    267 in 00:00:16 =   16.7/s Avg:   114 Min:     6 Max:   925 Err:   267 (100.00%) Active: 0 Started: 2 Finished: 2
+2026-07-18 23:49:16,153 INFO o.a.j.r.Summariser: summary =    399 in 00:00:30 =   13.1/s Avg:   132 Min:     6 Max:  1417 Err:   399 (100.00%)
+2026-07-18 23:49:16,237 INFO o.a.j.JMeter: Generating Dashboard
+2026-07-18 23:49:16,250 INFO o.a.j.r.d.ReportGenerator: Flushing result collector before report Generation
+2026-07-18 23:49:16,369 INFO o.a.j.r.p.NormalizerSampleConsumer: Using format, 'ms', to parse timeStamp field
+2026-07-18 23:49:19,906 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.AggregateConsumer#stopProducing(): beginDate produced 0 samples
+2026-07-18 23:49:19,906 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.AggregateConsumer#stopProducing(): endDate produced 0 samples
+2026-07-18 23:49:19,921 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.ApdexSummaryConsumer#stopProducing(): apdexSummary produced 0 samples
+2026-07-18 23:49:19,922 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.RequestsSummaryConsumer#stopProducing(): requestsSummary produced 0 samples
+2026-07-18 23:49:20,386 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.StatisticsSummaryConsumer#stopProducing(): statisticsSummary produced 0 samples
+2026-07-18 23:49:20,400 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.Top5ErrorsBySamplerConsumer#stopProducing(): top5ErrorsBySampler produced 0 samples
+2026-07-18 23:49:20,400 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.ErrorsSummaryConsumer#stopProducing(): errorsSummary produced 0 samples
+2026-07-18 23:49:20,401 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.HitsPerSecondGraphConsumer#stopProducing(): hitsPerSecond produced 0 samples
+2026-07-18 23:49:20,554 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.LatencyVSRequestGraphConsumer#stopProducing(): latencyVsRequest produced 0 samples
+2026-07-18 23:49:20,581 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.SyntheticResponseTimeDistributionGraphConsumer#stopProducing(): syntheticResponseTimeDistribution produced 0 samples
+2026-07-18 23:49:20,617 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.BytesThroughputGraphConsumer#stopProducing(): bytesThroughputOverTime produced 0 samples
+2026-07-18 23:49:20,637 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.CodesPerSecondGraphConsumer#stopProducing(): codesPerSecond produced 0 samples
+2026-07-18 23:49:21,343 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeVSRequestGraphConsumer#stopProducing(): responseTimeVsRequest produced 0 samples
+2026-07-18 23:49:21,345 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): startIntervalControlerFilter produced 2793 samples
+2026-07-18 23:49:21,350 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TotalTPSGraphConsumer#stopProducing(): totalTPS produced 0 samples
+2026-07-18 23:49:21,350 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ActiveThreadsGraphConsumer#stopProducing(): activeThreadsOverTime produced 0 samples
+2026-07-18 23:49:21,353 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TimeVSThreadGraphConsumer#stopProducing(): timeVsThreads produced 0 samples
+2026-07-18 23:49:21,355 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeDistributionGraphConsumer#stopProducing(): responseTimeDistribution produced 0 samples
+2026-07-18 23:49:21,358 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TransactionsPerSecondGraphConsumer#stopProducing(): transactionsPerSecond produced 0 samples
+2026-07-18 23:49:21,361 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimePercentilesGraphConsumer#stopProducing(): responseTimePercentiles produced 0 samples
+2026-07-18 23:49:21,387 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimePercentilesOverTimeGraphConsumer#stopProducing(): responseTimePercentilesOverTime produced 0 samples
+2026-07-18 23:49:21,388 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeOverTimeGraphConsumer#stopProducing(): responseTimesOverTime produced 0 samples
+2026-07-18 23:49:21,389 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ConnectTimeOverTimeGraphConsumer#stopProducing(): connectTimeOverTime produced 0 samples
+2026-07-18 23:49:21,391 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.LatencyOverTimeGraphConsumer#stopProducing(): latenciesOverTime produced 0 samples
+2026-07-18 23:49:21,392 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): nameFilter produced 5985 samples
+2026-07-18 23:49:21,394 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): dateRangeFilter produced 1197 samples
+2026-07-18 23:49:21,394 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.NormalizerSampleConsumer#stopProducing(): normalizer produced 399 samples
+2026-07-18 23:49:21,399 INFO o.a.j.r.p.CsvFileSampleSource: produce(): 399 samples produced in 4s 597 ms on channel 0
+2026-07-18 23:49:21,400 INFO o.a.j.r.d.ReportGenerator: Exporting data using exporter:'json' of className:'org.apache.jmeter.report.dashboard.JsonExporter'
+2026-07-18 23:49:22,829 INFO o.a.j.r.d.JsonExporter: Found data for consumer statisticsSummary in context
+2026-07-18 23:49:22,830 INFO o.a.j.r.d.JsonExporter: Creating statistics for overall
+2026-07-18 23:49:22,833 INFO o.a.j.r.d.JsonExporter: Creating statistics for other transactions
+2026-07-18 23:49:22,842 INFO o.a.j.r.d.JsonExporter: Checking output folder
+2026-07-18 23:49:22,849 INFO o.a.j.r.d.JsonExporter: Writing statistics JSON to C:\Users\andre\OneDrive\Escritorio\UCAB\Semestre 8\QA\Trello-Clone\jmeter-report\html\statistics.json
+2026-07-18 23:49:23,669 INFO o.a.j.r.d.ReportGenerator: Exporting data using exporter:'html' of className:'org.apache.jmeter.report.dashboard.HtmlTemplateExporter'
+2026-07-18 23:49:23,685 INFO o.a.j.r.d.HtmlTemplateExporter: Will generate dashboard in folder: C:\Users\andre\OneDrive\Escritorio\UCAB\Semestre 8\QA\Trello-Clone\jmeter-report\html
+2026-07-18 23:49:28,190 INFO o.a.j.r.d.HtmlTemplateExporter: Report will be generated in: C:\Users\andre\OneDrive\Escritorio\UCAB\Semestre 8\QA\Trello-Clone\jmeter-report\html, creating folder structure
+2026-07-18 23:49:28,201 INFO o.a.j.r.d.TemplateVisitor: Copying folder from 'C:\Users\andre\OneDrive\Escritorio\UCAB\Semestre 8\QA\Trello-Clone\tools\jmeter\apache-jmeter-5.6.3\bin\report-template' to 'C:\Users\andre\OneDrive\Escritorio\UCAB\Semestre 8\QA\Trello-Clone\jmeter-report\html', got message: C:\Users\andre\OneDrive\Escritorio\UCAB\Semestre 8\QA\Trello-Clone\jmeter-report\html, found non empty folder with following content [C:\Users\andre\OneDrive\Escritorio\UCAB\Semestre 8\QA\Trello-Clone\jmeter-report\html\statistics.json], will be ignored
+2026-07-18 23:49:33,084 INFO o.a.j.JMeter: Dashboard generated
