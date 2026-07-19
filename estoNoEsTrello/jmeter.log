@@ -1,0 +1,297 @@
+2026-07-18 19:35:36,454 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2026-07-18 19:35:36,482 INFO o.a.j.JMeter: Loading user properties from: C:\Users\laura\OneDrive\Documents\apache-jmeter-5.6.3\bin\user.properties
+2026-07-18 19:35:36,485 INFO o.a.j.JMeter: Loading system properties from: C:\Users\laura\OneDrive\Documents\apache-jmeter-5.6.3\bin\system.properties
+2026-07-18 19:35:36,486 INFO o.a.j.JMeter: Setting JMeter property: threads=10
+2026-07-18 19:35:36,486 INFO o.a.j.JMeter: Setting JMeter property: rampup=10
+2026-07-18 19:35:36,486 INFO o.a.j.JMeter: Setting JMeter property: duration=300
+2026-07-18 19:35:36,497 INFO o.a.j.JMeter: Copyright (c) 1998-2024 The Apache Software Foundation
+2026-07-18 19:35:36,497 INFO o.a.j.JMeter: Version 5.6.3
+2026-07-18 19:35:36,497 INFO o.a.j.JMeter: java.version=21.0.7
+2026-07-18 19:35:36,500 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2026-07-18 19:35:36,500 INFO o.a.j.JMeter: os.name=Windows 11
+2026-07-18 19:35:36,500 INFO o.a.j.JMeter: os.arch=amd64
+2026-07-18 19:35:36,500 INFO o.a.j.JMeter: os.version=10.0
+2026-07-18 19:35:36,500 INFO o.a.j.JMeter: file.encoding=UTF-8
+2026-07-18 19:35:36,500 INFO o.a.j.JMeter: java.awt.headless=true
+2026-07-18 19:35:36,500 INFO o.a.j.JMeter: Max memory     =1073741824
+2026-07-18 19:35:36,500 INFO o.a.j.JMeter: Available Processors =4
+2026-07-18 19:35:36,514 INFO o.a.j.JMeter: Default Locale=English (EN)
+2026-07-18 19:35:36,514 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2026-07-18 19:35:36,517 INFO o.a.j.JMeter: JMeterHome=C:\Users\laura\OneDrive\Documents\apache-jmeter-5.6.3
+2026-07-18 19:35:36,517 INFO o.a.j.JMeter: user.dir  =C:\Users\laura\OneDrive\Documents\GitHub\Trello-Clone\estoNoEsTrello
+2026-07-18 19:35:36,518 INFO o.a.j.JMeter: PWD       =C:\Users\laura\OneDrive\Documents\GitHub\Trello-Clone\estoNoEsTrello
+2026-07-18 19:35:36,892 INFO o.a.j.JMeter: IP: 192.168.10.15 Name: LAPTOP-K9E1RS3I FullName: 192.168.10.15
+2026-07-18 19:35:36,914 INFO o.a.j.JMeter: Setting property 'jmeter.reportgenerator.outputdir' to:'C:\Users\laura\OneDrive\Documents\GitHub\Trello-Clone\estoNoEsTrello\performance-tests\results\cp-s02-10u-report'
+2026-07-18 19:35:36,918 INFO o.a.j.s.FileServer: Default base='C:\Users\laura\OneDrive\Documents\GitHub\Trello-Clone\estoNoEsTrello'
+2026-07-18 19:35:36,918 INFO o.a.j.s.FileServer: Set new base='C:\Users\laura\OneDrive\Documents\GitHub\Trello-Clone\estoNoEsTrello\performance-tests\jmeter'
+2026-07-18 19:35:37,180 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2026-07-18 19:35:37,218 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2026-07-18 19:35:37,218 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2026-07-18 19:35:37,226 INFO o.a.j.s.SaveService: Loading file: performance-tests\jmeter\kanban-crud-plan.jmx
+2026-07-18 19:35:37,309 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-07-18 19:35:37,309 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-07-18 19:35:37,309 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-07-18 19:35:37,309 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-07-18 19:35:37,310 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2026-07-18 19:35:37,310 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2026-07-18 19:35:37,404 INFO o.a.j.JMeter: Creating summariser <summary>
+2026-07-18 19:35:37,429 INFO o.a.j.r.d.ReportGenerator: ReportGenerator will use for Parsing the separator: ','
+2026-07-18 19:35:37,429 INFO o.a.j.r.d.ReportGenerator: Will generate report at end of test from  results file: performance-tests\results\cp-s02-10u.jtl
+2026-07-18 19:35:37,431 INFO o.a.j.r.d.ReportGenerator: Reading report generator properties from: C:\Users\laura\OneDrive\Documents\apache-jmeter-5.6.3\bin\reportgenerator.properties
+2026-07-18 19:35:37,434 INFO o.a.j.r.d.ReportGenerator: Merging with JMeter properties
+2026-07-18 19:35:37,441 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.temp_dir' not found, using default value 'temp' instead.
+2026-07-18 19:35:37,446 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.apdex_per_transaction' not found, using default value 'null' instead.
+2026-07-18 19:35:37,446 INFO o.a.j.r.c.ReportGeneratorConfiguration: apdex_per_transaction is empty, not APDEX per transaction customization
+2026-07-18 19:35:37,446 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.sample_filter' not found, using default value 'null' instead.
+2026-07-18 19:35:37,446 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.report_title' not found, using default value 'null' instead.
+2026-07-18 19:35:37,446 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.start_date' not found, using default value 'null' instead.
+2026-07-18 19:35:37,446 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.end_date' not found, using default value 'null' instead.
+2026-07-18 19:35:37,446 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.date_format' not found, using default value 'null' instead.
+2026-07-18 19:35:37,446 INFO o.a.j.r.c.ReportGeneratorConfiguration: Will use date range start date: null, end date: null
+2026-07-18 19:35:37,451 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.totalTPS.exclude_controllers' not found, using default value 'false' instead.
+2026-07-18 19:35:37,451 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.activeThreadsOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-07-18 19:35:37,451 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.timeVsThreads.exclude_controllers' not found, using default value 'false' instead.
+2026-07-18 19:35:37,451 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimeDistribution.exclude_controllers' not found, using default value 'false' instead.
+2026-07-18 19:35:37,453 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.transactionsPerSecond.exclude_controllers' not found, using default value 'false' instead.
+2026-07-18 19:35:37,453 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentiles.exclude_controllers' not found, using default value 'false' instead.
+2026-07-18 19:35:37,453 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentilesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-07-18 19:35:37,453 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-07-18 19:35:37,454 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.connectTimeOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-07-18 19:35:37,454 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.latenciesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-07-18 19:35:37,454 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.filters_only_sample_series' not found, using default value 'true' instead.
+2026-07-18 19:35:37,454 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.series_filter' not found, using default value '' instead.
+2026-07-18 19:35:37,454 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.show_controllers_only' not found, using default value 'false' instead.
+2026-07-18 19:35:37,456 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.filters_only_sample_series' not found, using default value 'true' instead.
+2026-07-18 19:35:37,456 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.series_filter' not found, using default value '' instead.
+2026-07-18 19:35:37,456 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.show_controllers_only' not found, using default value 'false' instead.
+2026-07-18 19:35:37,477 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2026-07-18 19:35:37,480 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2026-07-18 19:35:37,480 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2026-07-18 19:35:37,486 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2026-07-18 19:35:37,486 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2026-07-18 19:35:37,623 INFO o.a.j.JMeter: Running test (1784417737623)
+2026-07-18 19:35:37,650 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : CP-S CRUD Load
+2026-07-18 19:35:37,650 INFO o.a.j.e.StandardJMeterEngine: Starting 10 threads for group CP-S CRUD Load.
+2026-07-18 19:35:37,650 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-07-18 19:35:37,650 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=10 ramp-up=10 delayedStart=false
+2026-07-18 19:35:37,667 INFO o.a.j.t.JMeterThread: Thread started: CP-S CRUD Load 1-1
+2026-07-18 19:35:37,673 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2026-07-18 19:35:37,674 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2026-07-18 19:35:37,697 INFO o.a.j.p.h.s.HTTPHCAbstractImpl: Local host = LAPTOP-K9E1RS3I
+2026-07-18 19:35:37,702 INFO o.a.j.p.h.s.HTTPHC4Impl: HTTP request retry count = 0
+2026-07-18 19:35:37,704 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2026-07-18 19:35:37,704 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to UTF-8
+2026-07-18 19:35:37,704 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2026-07-18 19:35:37,704 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2026-07-18 19:35:38,662 INFO o.a.j.t.JMeterThread: Thread started: CP-S CRUD Load 1-2
+2026-07-18 19:35:39,659 INFO o.a.j.t.JMeterThread: Thread started: CP-S CRUD Load 1-3
+2026-07-18 19:35:40,666 INFO o.a.j.t.JMeterThread: Thread started: CP-S CRUD Load 1-4
+2026-07-18 19:35:41,673 INFO o.a.j.t.JMeterThread: Thread started: CP-S CRUD Load 1-5
+2026-07-18 19:35:42,674 INFO o.a.j.t.JMeterThread: Thread started: CP-S CRUD Load 1-6
+2026-07-18 19:35:43,672 INFO o.a.j.t.JMeterThread: Thread started: CP-S CRUD Load 1-7
+2026-07-18 19:35:44,673 INFO o.a.j.t.JMeterThread: Thread started: CP-S CRUD Load 1-8
+2026-07-18 19:35:45,657 INFO o.a.j.t.JMeterThread: Thread started: CP-S CRUD Load 1-9
+2026-07-18 19:35:46,672 INFO o.a.j.t.JMeterThread: Thread started: CP-S CRUD Load 1-10
+2026-07-18 19:36:00,012 INFO o.a.j.r.Summariser: summary +   5553 in 00:00:22 =  248.1/s Avg:    31 Min:     5 Max:   422 Err:  5526 (99.51%) Active: 10 Started: 10 Finished: 0
+2026-07-18 19:36:30,008 INFO o.a.j.r.Summariser: summary +   7609 in 00:00:30 =  253.6/s Avg:    39 Min:     7 Max:   338 Err:  7609 (100.00%) Active: 10 Started: 10 Finished: 0
+2026-07-18 19:36:30,009 INFO o.a.j.r.Summariser: summary =  13162 in 00:00:52 =  251.3/s Avg:    36 Min:     5 Max:   422 Err: 13135 (99.79%)
+2026-07-18 19:37:00,008 INFO o.a.j.r.Summariser: summary +  10808 in 00:00:30 =  360.3/s Avg:    27 Min:     1 Max:   339 Err: 10808 (100.00%) Active: 10 Started: 10 Finished: 0
+2026-07-18 19:37:00,018 INFO o.a.j.r.Summariser: summary =  23970 in 00:01:22 =  291.0/s Avg:    32 Min:     1 Max:   422 Err: 23943 (99.89%)
+2026-07-18 19:37:30,000 INFO o.a.j.r.Summariser: summary +  22158 in 00:00:30 =  738.7/s Avg:    13 Min:     1 Max:    59 Err: 22158 (100.00%) Active: 10 Started: 10 Finished: 0
+2026-07-18 19:37:30,000 INFO o.a.j.r.Summariser: summary =  46128 in 00:01:52 =  410.5/s Avg:    23 Min:     1 Max:   422 Err: 46101 (99.94%)
+2026-07-18 19:38:00,007 INFO o.a.j.r.Summariser: summary +  18546 in 00:00:30 =  618.1/s Avg:    15 Min:     1 Max:   171 Err: 18546 (100.00%) Active: 10 Started: 10 Finished: 0
+2026-07-18 19:38:00,007 INFO o.a.j.r.Summariser: summary =  64674 in 00:02:22 =  454.2/s Avg:    21 Min:     1 Max:   422 Err: 64647 (99.96%)
+2026-07-18 19:38:30,008 INFO o.a.j.r.Summariser: summary +  11891 in 00:00:30 =  396.4/s Avg:    25 Min:     1 Max:   270 Err: 11891 (100.00%) Active: 10 Started: 10 Finished: 0
+2026-07-18 19:38:30,009 INFO o.a.j.r.Summariser: summary =  76565 in 00:02:52 =  444.2/s Avg:    21 Min:     1 Max:   422 Err: 76538 (99.96%)
+2026-07-18 19:39:00,006 INFO o.a.j.r.Summariser: summary +  11653 in 00:00:30 =  388.5/s Avg:    25 Min:     1 Max:   207 Err: 11653 (100.00%) Active: 10 Started: 10 Finished: 0
+2026-07-18 19:39:00,009 INFO o.a.j.r.Summariser: summary =  88218 in 00:03:22 =  435.9/s Avg:    22 Min:     1 Max:   422 Err: 88191 (99.97%)
+2026-07-18 19:39:30,000 INFO o.a.j.r.Summariser: summary +  22407 in 00:00:30 =  747.0/s Avg:    13 Min:     1 Max:    46 Err: 22407 (100.00%) Active: 10 Started: 10 Finished: 0
+2026-07-18 19:39:30,000 INFO o.a.j.r.Summariser: summary = 110625 in 00:03:52 =  476.1/s Avg:    20 Min:     1 Max:   422 Err: 110598 (99.98%)
+2026-07-18 19:40:00,001 INFO o.a.j.r.Summariser: summary +  18632 in 00:00:30 =  621.0/s Avg:    15 Min:     1 Max:   176 Err: 18632 (100.00%) Active: 10 Started: 10 Finished: 0
+2026-07-18 19:40:00,001 INFO o.a.j.r.Summariser: summary = 129257 in 00:04:22 =  492.6/s Avg:    19 Min:     1 Max:   422 Err: 129230 (99.98%)
+2026-07-18 19:40:30,000 INFO o.a.j.r.Summariser: summary +  11663 in 00:00:30 =  388.8/s Avg:    25 Min:     1 Max:   241 Err: 11663 (100.00%) Active: 10 Started: 10 Finished: 0
+2026-07-18 19:40:30,002 INFO o.a.j.r.Summariser: summary = 140920 in 00:04:52 =  482.0/s Avg:    20 Min:     1 Max:   422 Err: 140893 (99.98%)
+2026-07-18 19:40:37,650 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: CP-S CRUD Load 1-1
+2026-07-18 19:40:37,651 INFO o.a.j.t.JMeterThread: Thread finished: CP-S CRUD Load 1-1
+2026-07-18 19:40:37,665 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: CP-S CRUD Load 1-3
+2026-07-18 19:40:37,665 INFO o.a.j.t.JMeterThread: Thread finished: CP-S CRUD Load 1-3
+2026-07-18 19:40:37,665 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: CP-S CRUD Load 1-6
+2026-07-18 19:40:37,665 INFO o.a.j.t.JMeterThread: Thread finished: CP-S CRUD Load 1-6
+2026-07-18 19:40:37,668 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: CP-S CRUD Load 1-4
+2026-07-18 19:40:37,668 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: CP-S CRUD Load 1-2
+2026-07-18 19:40:37,668 INFO o.a.j.t.JMeterThread: Thread finished: CP-S CRUD Load 1-4
+2026-07-18 19:40:37,668 INFO o.a.j.t.JMeterThread: Thread finished: CP-S CRUD Load 1-2
+2026-07-18 19:40:37,676 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: CP-S CRUD Load 1-8
+2026-07-18 19:40:37,677 INFO o.a.j.t.JMeterThread: Thread finished: CP-S CRUD Load 1-8
+2026-07-18 19:40:37,683 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: CP-S CRUD Load 1-5
+2026-07-18 19:40:37,684 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: CP-S CRUD Load 1-9
+2026-07-18 19:40:37,684 INFO o.a.j.t.JMeterThread: Thread finished: CP-S CRUD Load 1-9
+2026-07-18 19:40:37,684 INFO o.a.j.t.JMeterThread: Thread finished: CP-S CRUD Load 1-5
+2026-07-18 19:40:37,704 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: CP-S CRUD Load 1-7
+2026-07-18 19:40:37,704 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: CP-S CRUD Load 1-10
+2026-07-18 19:40:37,704 INFO o.a.j.t.JMeterThread: Thread finished: CP-S CRUD Load 1-7
+2026-07-18 19:40:37,704 INFO o.a.j.t.JMeterThread: Thread finished: CP-S CRUD Load 1-10
+2026-07-18 19:40:37,706 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2026-07-18 19:40:37,708 INFO o.a.j.r.Summariser: summary +   1576 in 00:00:08 =  204.5/s Avg:    48 Min:     6 Max:  1113 Err:  1576 (100.00%) Active: 0 Started: 10 Finished: 10
+2026-07-18 19:40:37,712 INFO o.a.j.r.Summariser: summary = 142496 in 00:05:00 =  474.8/s Avg:    20 Min:     1 Max:  1113 Err: 142469 (99.98%)
+2026-07-18 19:40:37,717 INFO o.a.j.JMeter: Generating Dashboard
+2026-07-18 19:40:37,718 INFO o.a.j.r.d.ReportGenerator: Flushing result collector before report Generation
+2026-07-18 19:40:37,796 INFO o.a.j.r.p.NormalizerSampleConsumer: Using format, 'ms', to parse timeStamp field
+2026-07-18 19:40:45,443 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.AggregateConsumer#stopProducing(): beginDate produced 0 samples
+2026-07-18 19:40:45,443 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.AggregateConsumer#stopProducing(): endDate produced 0 samples
+2026-07-18 19:40:45,449 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.ApdexSummaryConsumer#stopProducing(): apdexSummary produced 0 samples
+2026-07-18 19:40:45,450 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.RequestsSummaryConsumer#stopProducing(): requestsSummary produced 0 samples
+2026-07-18 19:40:45,480 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.StatisticsSummaryConsumer#stopProducing(): statisticsSummary produced 0 samples
+2026-07-18 19:40:45,486 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.Top5ErrorsBySamplerConsumer#stopProducing(): top5ErrorsBySampler produced 0 samples
+2026-07-18 19:40:45,486 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.ErrorsSummaryConsumer#stopProducing(): errorsSummary produced 0 samples
+2026-07-18 19:40:45,486 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.HitsPerSecondGraphConsumer#stopProducing(): hitsPerSecond produced 0 samples
+2026-07-18 19:40:47,843 WARN o.a.j.r.p.g.AbstractVersusRequestsGraphConsumer$TimeCountConsumer: Cannot delete created temporary directory, 'temp\latencyVsRequest'
+java.nio.file.AccessDeniedException: temp\latencyVsRequest
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:89) ~[?:?]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:273) ~[?:?]
+	at java.base/sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:104) ~[?:?]
+	at java.base/java.nio.file.Files.delete(Files.java:1152) ~[?:?]
+	at org.apache.commons.io.FileUtils.delete(FileUtils.java:1170) ~[commons-io-2.15.1.jar:2.15.1]
+	at org.apache.commons.io.FileUtils.deleteDirectory(FileUtils.java:1190) ~[commons-io-2.15.1.jar:2.15.1]
+	at org.apache.jmeter.report.processor.graph.AbstractVersusRequestsGraphConsumer$TimeCountConsumer.stopConsuming(AbstractVersusRequestsGraphConsumer.java:359) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.report.processor.graph.AbstractVersusRequestsGraphConsumer.stopConsuming(AbstractVersusRequestsGraphConsumer.java:150) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.report.processor.AbstractSampleConsumer.stopProducing(AbstractSampleConsumer.java:241) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.report.processor.FilterConsumer.stopConsuming(FilterConsumer.java:111) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.report.processor.AbstractSampleConsumer.stopProducing(AbstractSampleConsumer.java:241) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.report.processor.FilterConsumer.stopConsuming(FilterConsumer.java:111) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.report.processor.AbstractSampleConsumer.stopProducing(AbstractSampleConsumer.java:241) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.report.processor.FilterConsumer.stopConsuming(FilterConsumer.java:111) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.report.processor.AbstractSampleConsumer.stopProducing(AbstractSampleConsumer.java:241) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.report.processor.NormalizerSampleConsumer.stopConsuming(NormalizerSampleConsumer.java:125) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.report.processor.CsvFileSampleSource$PrivateProducer.stopProducing(CsvFileSampleSource.java:336) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.report.processor.CsvFileSampleSource.produce(CsvFileSampleSource.java:183) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.report.processor.CsvFileSampleSource.run(CsvFileSampleSource.java:236) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.report.dashboard.ReportGenerator.generate(ReportGenerator.java:244) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.JMeter$ListenToTest.endTest(JMeter.java:1285) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.JMeter$ListenToTest.testEnded(JMeter.java:1240) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.engine.StandardJMeterEngine.notifyTestListenersOfEnd(StandardJMeterEngine.java:266) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.engine.StandardJMeterEngine.run(StandardJMeterEngine.java:543) ~[ApacheJMeter_core.jar:5.6.3]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[?:?]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+2026-07-18 19:40:47,861 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.LatencyVSRequestGraphConsumer#stopProducing(): latencyVsRequest produced 0 samples
+2026-07-18 19:40:47,873 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.SyntheticResponseTimeDistributionGraphConsumer#stopProducing(): syntheticResponseTimeDistribution produced 0 samples
+2026-07-18 19:40:47,875 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.BytesThroughputGraphConsumer#stopProducing(): bytesThroughputOverTime produced 0 samples
+2026-07-18 19:40:47,875 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.CodesPerSecondGraphConsumer#stopProducing(): codesPerSecond produced 0 samples
+2026-07-18 19:40:52,081 WARN o.a.j.r.p.g.AbstractVersusRequestsGraphConsumer$TimeCountConsumer: Cannot delete created temporary directory, 'temp\responseTimeVsRequest'
+java.nio.file.AccessDeniedException: temp\responseTimeVsRequest
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:89) ~[?:?]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:273) ~[?:?]
+	at java.base/sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:104) ~[?:?]
+	at java.base/java.nio.file.Files.delete(Files.java:1152) ~[?:?]
+	at org.apache.commons.io.FileUtils.delete(FileUtils.java:1170) ~[commons-io-2.15.1.jar:2.15.1]
+	at org.apache.commons.io.FileUtils.deleteDirectory(FileUtils.java:1190) ~[commons-io-2.15.1.jar:2.15.1]
+	at org.apache.jmeter.report.processor.graph.AbstractVersusRequestsGraphConsumer$TimeCountConsumer.stopConsuming(AbstractVersusRequestsGraphConsumer.java:359) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.report.processor.graph.AbstractVersusRequestsGraphConsumer.stopConsuming(AbstractVersusRequestsGraphConsumer.java:150) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.report.processor.AbstractSampleConsumer.stopProducing(AbstractSampleConsumer.java:241) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.report.processor.FilterConsumer.stopConsuming(FilterConsumer.java:111) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.report.processor.AbstractSampleConsumer.stopProducing(AbstractSampleConsumer.java:241) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.report.processor.FilterConsumer.stopConsuming(FilterConsumer.java:111) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.report.processor.AbstractSampleConsumer.stopProducing(AbstractSampleConsumer.java:241) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.report.processor.FilterConsumer.stopConsuming(FilterConsumer.java:111) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.report.processor.AbstractSampleConsumer.stopProducing(AbstractSampleConsumer.java:241) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.report.processor.NormalizerSampleConsumer.stopConsuming(NormalizerSampleConsumer.java:125) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.report.processor.CsvFileSampleSource$PrivateProducer.stopProducing(CsvFileSampleSource.java:336) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.report.processor.CsvFileSampleSource.produce(CsvFileSampleSource.java:183) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.report.processor.CsvFileSampleSource.run(CsvFileSampleSource.java:236) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.report.dashboard.ReportGenerator.generate(ReportGenerator.java:244) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.JMeter$ListenToTest.endTest(JMeter.java:1285) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.JMeter$ListenToTest.testEnded(JMeter.java:1240) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.engine.StandardJMeterEngine.notifyTestListenersOfEnd(StandardJMeterEngine.java:266) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.engine.StandardJMeterEngine.run(StandardJMeterEngine.java:543) ~[ApacheJMeter_core.jar:5.6.3]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[?:?]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+2026-07-18 19:40:52,086 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeVSRequestGraphConsumer#stopProducing(): responseTimeVsRequest produced 0 samples
+2026-07-18 19:40:52,092 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): startIntervalControlerFilter produced 997472 samples
+2026-07-18 19:40:52,092 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TotalTPSGraphConsumer#stopProducing(): totalTPS produced 0 samples
+2026-07-18 19:40:52,094 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ActiveThreadsGraphConsumer#stopProducing(): activeThreadsOverTime produced 0 samples
+2026-07-18 19:40:52,094 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TimeVSThreadGraphConsumer#stopProducing(): timeVsThreads produced 0 samples
+2026-07-18 19:40:52,096 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeDistributionGraphConsumer#stopProducing(): responseTimeDistribution produced 0 samples
+2026-07-18 19:40:52,096 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TransactionsPerSecondGraphConsumer#stopProducing(): transactionsPerSecond produced 0 samples
+2026-07-18 19:40:52,098 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimePercentilesGraphConsumer#stopProducing(): responseTimePercentiles produced 0 samples
+2026-07-18 19:40:52,119 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimePercentilesOverTimeGraphConsumer#stopProducing(): responseTimePercentilesOverTime produced 0 samples
+2026-07-18 19:40:52,121 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeOverTimeGraphConsumer#stopProducing(): responseTimesOverTime produced 0 samples
+2026-07-18 19:40:52,121 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ConnectTimeOverTimeGraphConsumer#stopProducing(): connectTimeOverTime produced 0 samples
+2026-07-18 19:40:52,121 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.LatencyOverTimeGraphConsumer#stopProducing(): latenciesOverTime produced 0 samples
+2026-07-18 19:40:52,123 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): nameFilter produced 2137440 samples
+2026-07-18 19:40:52,123 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): dateRangeFilter produced 427488 samples
+2026-07-18 19:40:52,123 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.NormalizerSampleConsumer#stopProducing(): normalizer produced 142496 samples
+2026-07-18 19:40:52,123 INFO o.a.j.r.p.CsvFileSampleSource: produce(): 142496 samples produced in 14s 248 ms on channel 0
+2026-07-18 19:40:52,125 INFO o.a.j.r.d.ReportGenerator: Exporting data using exporter:'json' of className:'org.apache.jmeter.report.dashboard.JsonExporter'
+2026-07-18 19:40:52,350 INFO o.a.j.r.d.JsonExporter: Found data for consumer statisticsSummary in context
+2026-07-18 19:40:52,350 INFO o.a.j.r.d.JsonExporter: Creating statistics for overall
+2026-07-18 19:40:52,350 INFO o.a.j.r.d.JsonExporter: Creating statistics for other transactions
+2026-07-18 19:40:52,350 INFO o.a.j.r.d.JsonExporter: Checking output folder
+2026-07-18 19:40:52,352 INFO o.a.j.r.d.JsonExporter: Writing statistics JSON to C:\Users\laura\OneDrive\Documents\GitHub\Trello-Clone\estoNoEsTrello\performance-tests\results\cp-s02-10u-report\statistics.json
+2026-07-18 19:40:52,458 INFO o.a.j.r.d.ReportGenerator: Exporting data using exporter:'html' of className:'org.apache.jmeter.report.dashboard.HtmlTemplateExporter'
+2026-07-18 19:40:52,469 INFO o.a.j.r.d.HtmlTemplateExporter: Will generate dashboard in folder: C:\Users\laura\OneDrive\Documents\GitHub\Trello-Clone\estoNoEsTrello\performance-tests\results\cp-s02-10u-report
+2026-07-18 19:40:53,426 INFO o.a.j.r.d.HtmlTemplateExporter: Report will be generated in: C:\Users\laura\OneDrive\Documents\GitHub\Trello-Clone\estoNoEsTrello\performance-tests\results\cp-s02-10u-report, creating folder structure
+2026-07-18 19:40:53,432 INFO o.a.j.r.d.TemplateVisitor: Copying folder from 'C:\Users\laura\OneDrive\Documents\apache-jmeter-5.6.3\bin\report-template' to 'C:\Users\laura\OneDrive\Documents\GitHub\Trello-Clone\estoNoEsTrello\performance-tests\results\cp-s02-10u-report', got message: C:\Users\laura\OneDrive\Documents\GitHub\Trello-Clone\estoNoEsTrello\performance-tests\results\cp-s02-10u-report, found non empty folder with following content [C:\Users\laura\OneDrive\Documents\GitHub\Trello-Clone\estoNoEsTrello\performance-tests\results\cp-s02-10u-report\statistics.json], will be ignored
+2026-07-18 19:40:54,960 WARN o.a.j.r.d.ReportGenerator: Cannot delete created temporary directory, 'temp'.
+org.apache.commons.io.IOExceptionList: 2 exception(s): [org.apache.commons.io.IOIndexedException: IOException #0: Cannot delete file: temp\latencyVsRequest, org.apache.commons.io.IOIndexedException: IOException #1: Cannot delete file: temp\responseTimeVsRequest]
+	at org.apache.commons.io.IOExceptionList.checkEmpty(IOExceptionList.java:50) ~[commons-io-2.15.1.jar:2.15.1]
+	at org.apache.commons.io.function.IOStream.forAll(IOStream.java:359) ~[commons-io-2.15.1.jar:2.15.1]
+	at org.apache.commons.io.function.IOStreams.forAll(IOStreams.java:42) ~[commons-io-2.15.1.jar:2.15.1]
+	at org.apache.commons.io.function.IOStreams.forAll(IOStreams.java:36) ~[commons-io-2.15.1.jar:2.15.1]
+	at org.apache.commons.io.function.IOConsumer.forAll(IOConsumer.java:80) ~[commons-io-2.15.1.jar:2.15.1]
+	at org.apache.commons.io.FileUtils.cleanDirectory(FileUtils.java:334) ~[commons-io-2.15.1.jar:2.15.1]
+	at org.apache.commons.io.FileUtils.deleteDirectory(FileUtils.java:1188) ~[commons-io-2.15.1.jar:2.15.1]
+	at org.apache.jmeter.report.dashboard.ReportGenerator.removeTempDir(ReportGenerator.java:303) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.report.dashboard.ReportGenerator.generate(ReportGenerator.java:266) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.JMeter$ListenToTest.endTest(JMeter.java:1285) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.JMeter$ListenToTest.testEnded(JMeter.java:1240) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.engine.StandardJMeterEngine.notifyTestListenersOfEnd(StandardJMeterEngine.java:266) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.engine.StandardJMeterEngine.run(StandardJMeterEngine.java:543) ~[ApacheJMeter_core.jar:5.6.3]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[?:?]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: org.apache.commons.io.IOIndexedException: IOException #0: Cannot delete file: temp\latencyVsRequest
+	at org.apache.commons.io.function.IOStream.lambda$forAll$11(IOStream.java:354) ~[commons-io-2.15.1.jar:2.15.1]
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024) ~[?:?]
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762) ~[?:?]
+	at org.apache.commons.io.function.IOStream.forAll(IOStream.java:345) ~[commons-io-2.15.1.jar:2.15.1]
+	... 16 more
+Caused by: java.io.IOException: Cannot delete file: temp\latencyVsRequest
+	at org.apache.commons.io.FileUtils.forceDelete(FileUtils.java:1336) ~[commons-io-2.15.1.jar:2.15.1]
+	at org.apache.commons.io.function.IOStream.lambda$forAll$11(IOStream.java:347) ~[commons-io-2.15.1.jar:2.15.1]
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024) ~[?:?]
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762) ~[?:?]
+	at org.apache.commons.io.function.IOStream.forAll(IOStream.java:345) ~[commons-io-2.15.1.jar:2.15.1]
+	... 16 more
+Caused by: java.nio.file.AccessDeniedException: temp\latencyVsRequest
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:89) ~[?:?]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:273) ~[?:?]
+	at java.base/sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:109) ~[?:?]
+	at java.base/java.nio.file.Files.deleteIfExists(Files.java:1191) ~[?:?]
+	at org.apache.commons.io.file.DeletingPathVisitor.postVisitDirectory(DeletingPathVisitor.java:140) ~[commons-io-2.15.1.jar:2.15.1]
+	at org.apache.commons.io.file.DeletingPathVisitor.postVisitDirectory(DeletingPathVisitor.java:37) ~[commons-io-2.15.1.jar:2.15.1]
+	at java.base/java.nio.file.Files.walkFileTree(Files.java:2803) ~[?:?]
+	at java.base/java.nio.file.Files.walkFileTree(Files.java:2857) ~[?:?]
+	at org.apache.commons.io.file.PathUtils.visitFileTree(PathUtils.java:1653) ~[commons-io-2.15.1.jar:2.15.1]
+	at org.apache.commons.io.file.PathUtils.deleteDirectory(PathUtils.java:516) ~[commons-io-2.15.1.jar:2.15.1]
+	at org.apache.commons.io.file.PathUtils.delete(PathUtils.java:475) ~[commons-io-2.15.1.jar:2.15.1]
+	at org.apache.commons.io.FileUtils.forceDelete(FileUtils.java:1333) ~[commons-io-2.15.1.jar:2.15.1]
+	at org.apache.commons.io.function.IOStream.lambda$forAll$11(IOStream.java:347) ~[commons-io-2.15.1.jar:2.15.1]
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024) ~[?:?]
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762) ~[?:?]
+	at org.apache.commons.io.function.IOStream.forAll(IOStream.java:345) ~[commons-io-2.15.1.jar:2.15.1]
+	... 16 more
+2026-07-18 19:40:54,964 INFO o.a.j.JMeter: Dashboard generated
