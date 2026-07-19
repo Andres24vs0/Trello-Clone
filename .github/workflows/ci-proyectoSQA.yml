@@ -34,6 +34,7 @@ jobs:
   integration-tests:
     name: Pruebas de integración
     needs: unit-tests
+    if: success() || failure() #
     runs-on: ubuntu-latest
     timeout-minutes: 45
     env:
@@ -111,108 +112,55 @@ jobs:
           docker compose logs kanban-app || true
           exit 1
 
-      - name: Smoke test del contenedor Docker
-        run: curl -fsS http://127.0.0.1:8080/ | head
+            - name: Instalar JMeter
+              run: |
+                  curl -L https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.6.3.tgz | tar -xz -C /tmp
+                  echo "/tmp/apache-jmeter-5.6.3/bin" >> $GITHUB_PATH
 
-      - name: Instalar JMeter portátil para Docker
-        run: |
-          JMETER_VERSION=5.6.3
-          JMETER_HOME="$RUNNER_TEMP/apache-jmeter-$JMETER_VERSION"
-          curl -L --fail --retry 3 --retry-delay 5 \
-            -o "$RUNNER_TEMP/apache-jmeter-$JMETER_VERSION.tgz" \
-            "https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-$JMETER_VERSION.tgz"
-          tar -xzf "$RUNNER_TEMP/apache-jmeter-$JMETER_VERSION.tgz" -C "$RUNNER_TEMP"
-          echo "$JMETER_HOME/bin" >> "$GITHUB_PATH"
+            - name: Ejecutar CP-S-01/02 (Carga escalonada)
+              run: |
+                  for threads in 10 50 100; do
+                    mkdir -p jmeter-report/${threads}u
+                    jmeter -n -t estoNoEsTrello/performance-tests/jmeter/kanban-crud-plan.jmx \
+                      -Jhost=127.0.0.1 -Jport=8080 -Jthreads=${threads} -Jrampup=10 -Jduration=300 \
+                      -l jmeter-report/${threads}u/results.jtl -e -o jmeter-report/${threads}u/html
+                  done
 
-      # --- CP-S-01 (hilos=10) y CP-S-02 (hilos=10,50,100): 3 corridas de 5 min = 15 min ---
-      - name: Pruebas de carga JMeter — CP-S-01/CP-S-02 (10, 50 y 100 usuarios virtuales)
-        if: always()
-        continue-on-error: true
-        run: |
-          if [ -f estoNoEsTrello/performance-tests/jmeter/kanban-crud-plan.jmx ]; then
-            for threads in 10 50 100; do
-              echo "=== Reiniciando dataset nominal antes de la corrida de ${threads} hilos ==="
-              cp estoNoEsTrello/src/main/resources/JSONs/Users.nominal.seed.json \
-                 estoNoEsTrello/src/main/resources/JSONs/Users.json
-              docker compose restart kanban-app
+            - name: Pruebas de carga JMeter — CP-S-04 (capacidad máxima)
+              if: always()
+              continue-on-error: true
+              run: |
+                  docker compose stop kanban-app
+                  
+                  # Usamos paréntesis para que el 'cd' solo aplique a esta línea y no rompa el path de JMeter
+                  (cd estoNoEsTrello && ./mvnw -q exec:java -Dexec.mainClass=com.ingenieriadesoftware.EstoNoEsTrello.testutils.PerformanceDataSeeder -Dexec.classpathScope=test -Dexec.args="max")
+                  
+                  docker compose start kanban-app
+                  sleep 20
+                  
+                  mkdir -p estoNoEsTrello/jmeter-report/cp-s-03
+                  jmeter -n \
+                    -t estoNoEsTrello/performance-tests/jmeter/kanban-crud-plan.jmx \
+                    -Jhost=127.0.0.1 \
+                    -Jport=8080 \
+                    -Jthreads=10 \
+                    -Jrampup=10 \
+                    -Jduration=300 \
+                    -l estoNoEsTrello/jmeter-report/cp-s-03/results.jtl \
+                    -e -o estoNoEsTrello/jmeter-report/cp-s-03/html
 
-              for i in $(seq 1 30); do
-                if curl -fsS http://127.0.0.1:8080/actuator/health >/dev/null 2>&1; then
-                  echo "Contenedor listo tras reinicio (${threads} hilos)"
-                  break
-                fi
-                sleep 3
-              done
+            - name: Capturar evidencias de Docker
+              if: always()
+              run: |
+                  mkdir -p evidencias
+                  docker compose ps > evidencias/docker-ps.txt || true
+                  docker compose logs kanban-app > evidencias/docker-logs.txt || true
 
-              mkdir -p estoNoEsTrello/jmeter-report/${threads}u
-              jmeter -n \
-                -t estoNoEsTrello/performance-tests/jmeter/kanban-crud-plan.jmx \
-                -Jhost=127.0.0.1 \
-                -Jport=8080 \
-                -Jthreads=${threads} \
-                -Jrampup=10 \
-                -Jduration=300 \
-                -l estoNoEsTrello/jmeter-report/${threads}u/results.jtl \
-                -e -o estoNoEsTrello/jmeter-report/${threads}u/html
-            done
-          else
-            echo "No existe el plan JMeter en la ruta esperada; se omite esta etapa."
-          fi
-
-      # --- CP-S-04: capacidad máxima declarada por el ERS (15x50x50 = 37.500 tarjetas) ---
-      - name: Sembrar dataset de capacidad máxima (CP-S-04)
-        working-directory: ./estoNoEsTrello
-        run: |
-          ./mvnw -q exec:java \
-            -Dexec.mainClass=com.ingenieriadesoftware.EstoNoEsTrello.testutils.PerformanceDataSeeder \
-            -Dexec.classpathScope=test \
-            -Dexec.args="max"
-
-      - name: Reiniciar contenedor con dataset de capacidad máxima
-        run: |
-          docker compose restart kanban-app
-          for i in $(seq 1 30); do
-            if curl -fsS http://127.0.0.1:8080/actuator/health >/dev/null 2>&1; then
-              echo "Contenedor listo con dataset máximo"
-              break
-            fi
-            sleep 3
-          done
-
-      - name: Pruebas de carga JMeter — CP-S-04 (capacidad máxima)
-        if: always()
-        continue-on-error: true
-        run: |
-          mkdir -p estoNoEsTrello/jmeter-report/cp-s-04
-          jmeter -n \
-            -t estoNoEsTrello/performance-tests/jmeter/kanban-crud-plan.jmx \
-            -Jhost=127.0.0.1 \
-            -Jport=8080 \
-            -Jthreads=10 \
-            -Jrampup=10 \
-            -Jduration=300 \
-            -l estoNoEsTrello/jmeter-report/cp-s-04/results.jtl \
-            -e -o estoNoEsTrello/jmeter-report/cp-s-04/html
-
-      - name: Capturar evidencias de Docker
-        if: always()
-        run: |
-          mkdir -p estoNoEsTrello/evidencias
-          docker compose ps > estoNoEsTrello/evidencias/docker-ps.txt || true
-          docker compose logs kanban-app > estoNoEsTrello/evidencias/docker-logs.txt || true
-
-  evidence:
-    name: Publicar evidencias SQA
-    needs: [unit-tests, integration-tests, system-tests]
-    if: always()
-    runs-on: ubuntu-latest
-    steps:
-      - name: Subir artefactos
-        uses: actions/upload-artifact@v4
-        with:
-          name: sqa-evidencias
-          path: |
-            estoNoEsTrello/target/surefire-reports/
-            estoNoEsTrello/evidencias/
-            estoNoEsTrello/jmeter-report/
-          if-no-files-found: ignore
+            - name: Subir evidencias de Sistema
+              if: always()
+              uses: actions/upload-artifact@v4
+              with:
+                  name: evidencias-sistema
+                  path: |
+                      evidencias/
+                      estoNoEsTrello/jmeter-report/

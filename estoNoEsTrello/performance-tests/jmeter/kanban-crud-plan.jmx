@@ -5,13 +5,7 @@
       <stringProp name="TestPlan.comments">Plan JMeter para CP-S-01, CP-S-02 y CP-S-04 (ST-KANBAN-PERF-PLAN). Parametrizable via -J (threads, rampup, duration, host, port).</stringProp>
       <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
-        <collectionProp name="Arguments.arguments">
-          <elementProp name="userEmail" elementType="Argument">
-            <stringProp name="Argument.name">userEmail</stringProp>
-            <stringProp name="Argument.value">usuario.${__threadNum}${__threadNum}@est.ucab.edu.ve</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-        </collectionProp>
+        <collectionProp name="Arguments.arguments"/>
       </elementProp>
     </TestPlan>
     <hashTree>
@@ -49,8 +43,19 @@
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Registrar usuario una sola vez por hilo" enabled="true"/>
-        <hashTree>
+        <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Generador de Email Único" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">
+def threadNum = ctx.getThreadNum() + 1
+def iteration = vars.getIteration()
+def uuid = java.util.UUID.randomUUID().toString().substring(0,6)
+vars.put(&quot;userEmail&quot;, &quot;usuario.t&quot; + threadNum + &quot;i&quot; + iteration + &quot;_&quot; + uuid + &quot;@est.ucab.edu.ve&quot;)
+          </stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223PreProcessor>
+        <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="00 POST registerUser" enabled="true">
           <stringProp name="HTTPSampler.path">/user/registro</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -68,14 +73,6 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Generar email unico por hilo" enabled="true">
-            <stringProp name="cacheKey">true</stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="script">vars.put(&quot;userEmail&quot;, &quot;usuario.&quot; + ctx.getThreadNum() + &quot;.&quot; + ctx.getThreadGroup().getName().replaceAll(&quot;[^A-Za-z0-9]&quot;,&quot;&quot;) + System.currentTimeMillis() + &quot;@est.ucab.edu.ve&quot;)</stringProp>
-            <stringProp name="scriptLanguage">groovy</stringProp>
-          </JSR223PreProcessor>
-          <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assert registration response" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="921241994">Datos Ingresados</stringProp>
@@ -87,7 +84,6 @@
             <boolProp name="Assertion.assume_success">false</boolProp>
           </ResponseAssertion>
           <hashTree/>
-        </hashTree>
         </hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="01 POST createWorkSpace">
           <stringProp name="HTTPSampler.path">/user/createWorkSpace?email=${userEmail}</stringProp>
